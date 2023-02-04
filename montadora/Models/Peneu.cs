@@ -14,7 +14,7 @@ namespace Models
         public int VelocidadeAtual { get; set; }
         public bool Estepe { get; set; }
 
-        public Pneu(int _Aro, int _VelocidadeMaxima, string _tipo, bool _estepe)
+        public Pneu(int _Aro, int _VelocidadeMaxima, string _tipo, bool _estepe=false)
         {
             Aro = _Aro;
             Tipo = _tipo;

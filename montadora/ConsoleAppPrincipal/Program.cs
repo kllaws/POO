@@ -6,11 +6,10 @@ namespace ConsoleAppPrincipal
     {
         static void Main(string[] args)
         {
-            Pneu pneu1 = new Pneu(16,150,"Carro de passeio",false);
-         
-          
-
+            Pneu pneu1 = new Pneu(16,150,"Carro de passeio");
             Pneu pneu2 = new Pneu(16,70,"peneu de estepe",true);
+            Carro corcel = new Models.Carro();
+
           
            
 
