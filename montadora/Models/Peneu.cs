@@ -73,6 +73,11 @@ namespace Models
             Console.WriteLine("TWI: " + TWI);
             Console.WriteLine("VelocidadeAtual: " + VelocidadeAtual);
 
+        
+
+
+
+
         }
 
     }
