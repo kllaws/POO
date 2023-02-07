@@ -76,7 +76,7 @@ namespace Models
             PneuDianteiroEsquerdo.Girar(_impulso);
             PneuDianteiroDireito.Girar(_impulso);
             PneuTrazeiroEsquerdo.Girar(_impulso);
-            PneuTrazeiroDireito.VGirar(_impulso);
+            PneuTrazeiroDireito.Girar(_impulso);
 
 
         }
@@ -86,6 +86,14 @@ namespace Models
             VelocidadeAtual = VelocidadeAtual - _reduzir;
             if (VelocidadeAtual < 0)
                 VelocidadeAtual = 0;
+
+            Ligar = false;
+            VelocidadeAtual
+
+            PneuDianteiroEsquerdo.frear(_reduzir);
+            PneuDianteiroDireito.frear(_reduzir);
+            PneuTrazeiroEsquerdo.frear(_reduzir);
+            PneuTrazeiroDireito.frear(_reduzir);
 
         }
         

@@ -14,8 +14,13 @@ namespace ConsoleAppPrincipal
 
            
             fusca.Abastecer(80);
-            fusca.ligar(true);
-            fusca.acelerar(15);
+            fusca.Ligar(true);
+            fusca.Acelerar(15);
+            fusca.Acelerar(5);
+            fusca.Acelerar(22);
+            fusca.Acelerar(15);
+            fusca.Acelerar(15);
+            fusca.Exibir();
 
         }
     }
