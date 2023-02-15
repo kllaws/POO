@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-using System.Reflection;
-
-namespace Models
+﻿namespace Models
 {
     public class Carro
     {
@@ -18,11 +11,11 @@ namespace Models
         public int Odometro { get; set; }
         public bool Ligado { get; set; }
         public int PercentualCombustivel { get; set; }
-        public int PneuDianteiroEsquerdo { get; set; }
-        public int PneuDianteiroDireito { get; set; }
-        public int PneuTraseiroEsquerdo { get; set; }
-        public int PneuTraseiroDireito { get; set; }
-        public int PneuEstepe { get; set; }
+        public Pneu PneuDianteiroEsquerdo { get; set; }
+        public Pneu PneuDianteiroDireito { get; set; }
+        public Pneu PneuTraseiroEsquerdo { get; set; }
+        public Pneu PneuTraseiroDireito { get; set; }
+        public Pneu PneuEstepe { get; set; }
         public Carro(string _marca, string _modelo, int _ano, int _velocidadeMaxima, string _placa)
         {
             Marca = _marca;
@@ -45,8 +38,9 @@ namespace Models
         {
             if (PercentualCombustivel > 0)
             {
-                PercentualCombustivel = PercentualCombustivel - 3;
+                PercentualCombustivel -= 3;
                 Ligado = true;
+
                 if (PercentualCombustivel <= 0)
                 {
                     PercentualCombustivel = 0;
@@ -85,7 +79,6 @@ namespace Models
                 }
             }
         }
-
         private void Parar()
         {
             VelocidadeAtual = 0;
@@ -94,10 +87,9 @@ namespace Models
             PneuTraseiroDireito.VelocidadeAtual = 0;
             PneuTraseiroEsquerdo.VelocidadeAtual = 0;
         }
-
         public void Frear(int _reduzir)
         {
-            VelocidadeAtual = VelocidadeAtual - _reduzir;
+            VelocidadeAtual -= _reduzir;
 
             if (VelocidadeAtual < 0)
                 VelocidadeAtual = 0;
@@ -125,10 +117,8 @@ namespace Models
                 return;
             }
 
-            if (PercentualCombustivel < 100)
-                PercentualCombustivel = PercentualCombustivel + _quantidadeCombustivel;
+            PercentualCombustivel += _quantidadeCombustivel;
         }
-
         public void Exibir()
         {
             Console.Clear();

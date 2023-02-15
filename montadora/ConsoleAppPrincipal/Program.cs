@@ -20,6 +20,7 @@ namespace ConsoleAppPrincipal
             fusca.Acelerar(3);
             fusca.Frear(4);
             fusca.Desligar();
+            fusca.PneuDianteiroEsquerdo = fusca.PneuEstepe;
             fusca.Ligar();
             fusca.Acelerar(15);
             fusca.Acelerar(5);
@@ -39,6 +40,4 @@ namespace ConsoleAppPrincipal
             fusca.Exibir();
         }
     }
-    
 }
-
