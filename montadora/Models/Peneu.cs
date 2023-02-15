@@ -1,86 +1,54 @@
-﻿using Models;
-
+﻿
 namespace Models
 {
-    public class Pneu
+    public static void Main(string[] args)
     {
-        public string? Cor { get; set; }
-        public int Aro { get; set; }
-        public string? Tipo { get; set; }
-        public bool TWI { get; set; }
-        public int PercentualBorracha { get; set; }
-        public bool Estourado { get; set; }
-        public int VelocidadeMaxima { get; set; }
-        public int VelocidadeAtual { get; set; }
-        public bool Estepe { get; set; }
+        Pneu pneu1 = new Pneu(16, 150, "Carro de passeio");
+        Pneu pneu2 = new Pneu(16, 70, "Pneu de estepe", true);
+        //Pneu pneu1 = new Pneu(16, 150, "Carro de passeio");
+        //Pneu pneu2 = new Pneu(16, 70, "Pneu de estepe", true);
 
-        public Pneu(int _Aro, int _VelocidadeMaxima, string _tipo, bool _estepe=false)
-        {
-            Aro = _Aro;
-            Tipo = _tipo;
-            VelocidadeMaxima = _VelocidadeMaxima;
-            Estepe = _estepe;
-            VelocidadeAtual = 0;
-            Estourado = false;
-            TWI = false;
-            Cor = "preto";
-            PercentualBorracha = 100;
-        }
+        pneu1.Girar(6);
+        pneu2.Girar(6);
+        pneu2.Girar(15);
+        pneu2.Girar(10);
+        pneu2.Frear(5);
+        pneu2.Girar(20);
+        pneu2.Girar(20);
+        pneu2.Girar(5);
+        pneu1.Exibir();
+        Console.WriteLine();
+        pneu2.Exibir();
+        Carro fusca = new Carro("Volkswagen", "Itamar Franco", 1994, 120, "");
 
-
-        public void Girar(int _velocidade)
-        {
-            VelocidadeAtual = VelocidadeAtual + _velocidade;
-            PercentualBorracha = PercentualBorracha - 3;
-
-            if (VelocidadeAtual > VelocidadeMaxima || PercentualBorracha <= 30)
-            {
-                EstourarPneu();
-            }
-        }
-
-        public void EstourarPneu()
-        {
-            Estourado = true;
-            VelocidadeAtual = 0;
-        }
-
-        public void frear(int _reducao)
-        {
-            VelocidadeAtual = VelocidadeAtual - _reducao;
-            PercentualBorracha = PercentualBorracha - 5;
-
-            if (PercentualBorracha <= 30)
-            {
-                EstourarPneu();
-            }
-
-            if(VelocidadeAtual < 0)
-            {
-                VelocidadeAtual = 0;
-            }
-
-        }
-        public void Exibir()
-        {
-            Console.WriteLine("Aro: " + Aro);
-            Console.WriteLine("PercentualBorracha: " + PercentualBorracha);
-            Console.WriteLine("Cor: " + Cor);
-            Console.WriteLine("VelocidadeMaxima: " + VelocidadeMaxima);
-            Console.WriteLine("Estepe: " + Estepe);
-            Console.WriteLine("Estourado: " + Estourado);
-            Console.WriteLine("Tipo: " + Tipo);
-            Console.WriteLine("TWI: " + TWI);
-            Console.WriteLine("VelocidadeAtual: " + VelocidadeAtual);
-
-        
-
-
-
-
-        }
-
+        fusca.Abastecer(80);
+        fusca.Ligar();
+        fusca.Acelerar(15);
+        fusca.Acelerar(5);
+        fusca.Acelerar(22);
+        fusca.Frear(8);
+        fusca.Acelerar(3);
+        fusca.Frear(4);
+        fusca.Desligar();
+        fusca.PneuDianteiroEsquerdo = fusca.PneuEstepe;
+        fusca.Ligar();
+        fusca.Acelerar(15);
+        fusca.Acelerar(5);
+        fusca.Acelerar(22);
+        fusca.Frear(8);
+        fusca.Acelerar(3);
+        fusca.Frear(4);
+        fusca.Acelerar(3);
+        fusca.Acelerar(3);
+        fusca.Acelerar(3);
+        fusca.Abastecer(80);
+        fusca.Ligar();
+        fusca.Acelerar(40);
+        fusca.Acelerar(29);
+        fusca.Acelerar(1);
+        fusca.Acelerar(1);
+        fusca.Exibir();
     }
 }
 
-        
+
