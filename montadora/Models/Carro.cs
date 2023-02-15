@@ -3,6 +3,8 @@
 
 
 
+using System.Reflection;
+
 namespace Models
 {
     public class Carro
@@ -16,11 +18,11 @@ namespace Models
         public int Odometro { get; set; }
         public bool Ligado { get; set; }
         public int PercentualCombustivel { get; set; }
-        public Pneu PneuDianteiroEsquerdo { get; set; }
-        public Pneu PneuDianteiroDireito { get; set; }
-        public Pneu PneuTraseiroEsquerdo { get; set; }
-        public Pneu PneuTraseiroDireito { get; set; }
-        public Pneu PneuEstepe { get; set; }
+        public int PneuDianteiroEsquerdo { get; set; }
+        public int PneuDianteiroDireito { get; set; }
+        public int PneuTraseiroEsquerdo { get; set; }
+        public int PneuTraseiroDireito { get; set; }
+        public int PneuEstepe { get; set; }
         public Carro(string _marca, string _modelo, int _ano, int _velocidadeMaxima, string _placa)
         {
             Marca = _marca;
